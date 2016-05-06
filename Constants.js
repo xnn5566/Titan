@@ -16,8 +16,7 @@ var Constants = {
     ROOT_PATH : ROOTPATH,
 
     DAEMON_PID_PATH : p.resolve(ROOTPATH, 'titan.pid'),
-    DAEMON_RPC_PORT : p.resolve(ROOTPATH, 'rpc.sock'),
-    DAEMON_PUB_PORT : p.resolve(ROOTPATH, 'pub.sock')
+    DAEMON_BUS_PORT : p.resolve(ROOTPATH, 'bus.sock')
 }
 
 // windows 平台 处理
