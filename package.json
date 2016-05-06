@@ -1,0 +1,16 @@
+{
+  "name": "titan",
+  "version": "0.0.1",
+  "description": "a nodejs process manager package",
+  "main": "index.js",
+  "dependencies": {
+    "axon": "^2.0.2",
+    "chalk": "^1.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xuyanan",
+  "license": "MIT"
+}
