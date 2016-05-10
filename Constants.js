@@ -1,6 +1,6 @@
 var p = require('path');
 var fs = require('fs');
-var chalk = require('chalk');
+// var chalk = require('chalk');
 
 // 定位 Titan 的运行目录
 var ROOTPATH = '';
@@ -16,15 +16,14 @@ var Constants = {
     ROOT_PATH : ROOTPATH,
 
     DAEMON_PID_PATH : p.resolve(ROOTPATH, 'titan.pid'),
-    DAEMON_BUS_PORT : p.resolve(ROOTPATH, 'bus.sock')
+    DAEMON_PRO_PORT : p.resolve(ROOTPATH, 'protocol.sock')
 }
 
 // windows 平台 处理
 if (process.platform === 'win32' ||process.platform === 'win64') {
     Constants.TITAN_HOME = p.resolve(process.env.HOMEDRIVE, process.env.HOMEPATH, '.titan');
-    Constants.DAEMON_PID_PATH = p.resolve(Constants.TITAN_HOME, 'daemon.pid'),
-    Constants.DAEMON_RPC_PORT = '\\\\.\\pipe\\rpc.sock';
-    Constants.DAEMON_PUB_PORT = '\\\\.\\pipe\\pub.sock';
+    Constants.DAEMON_PID_PATH = p.resolve(Constants.TITAN_HOME, 'titan.pid'),
+    Constants.DAEMON_PRO_PORT = '\\\\.\\pipe\\protocol.sock';
 }
 
 module.exports = Constants;
