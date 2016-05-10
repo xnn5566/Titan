@@ -4,7 +4,8 @@ var Titan = require('../index.js');
 Titan.start({
     'name' : 'myTitan',
     'entrance' : 'index.js',
-    'cluster_count' : 0,
+    'worker_count' : 0,
+    'args' : '--harmony'
 },function (){
     // CLI.test();
 })
