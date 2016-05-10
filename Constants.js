@@ -13,10 +13,16 @@ if (process.env.TITAN_ROOT_PATH) {
 }
 
 var Constants = {
-    ROOT_PATH : ROOTPATH,
+    ROOT_PATH              : ROOTPATH,
 
-    DAEMON_PID_PATH : p.resolve(ROOTPATH, 'titan.pid'),
-    DAEMON_PRO_PORT : p.resolve(ROOTPATH, 'protocol.sock')
+    ONLINE_STATUS          : 'online',
+    OFFLINE_STATUS         : 'offline',
+    STOPPING_STATUS        : 'stopping',
+    LAUNCHING_STATUS       : 'launching',
+    ERRORED_STATUS         : 'errored',
+
+    DAEMON_PID_PATH        : p.resolve(ROOTPATH, 'titan.pid'),
+    DAEMON_PRO_PORT        : p.resolve(ROOTPATH, 'protocol.sock')
 }
 
 // windows 平台 处理
