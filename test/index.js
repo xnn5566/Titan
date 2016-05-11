@@ -1,9 +1,12 @@
 var net = require('net');
+var fs = require('fs');
+
+console.log('我是 worker');
 var server = net.createServer(function(connect) { // 'connection' 监听器
-    connect.write('hello');
+    connect.write('hello world');
     connect.end();
 });
 server.listen(8080);
-// console.log(process.cwd())
-// console.log(process.env)
-// console.log(module.filename)
+
+// var name = require('./name');
+// console.log(fs.readFileSync('file.js').toString());
