@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+var commander = require('commander');
+var pkg = require('../package.json');
+
+var pmt = require('../index');
+
+//basic infomation
+commander
+    .version(pkg.version)
+    .description('pmt: progress manager titan');
+
+//options  
+commander
+    .option('-a, --all', 'list all commands')
+
+//commands
+commander
+    .command('start [appName]')
+    .action(function(appName, options) {
+        pmt.start({
+            'name': appName || 'myTitan',
+            'entrance': '../test/index.js',
+            'worker_count': 1,
+            'args': '--harmony'
+        }, function() {});
+    });
+commander
+    .command('kill [appName]')
+    .action(function(appName) {
+        //kill daemon
+        if (typeof appName == 'undefined') {
+            pmt.kill();
+        }
+    });
+
+commander.parse(process.argv);

@@ -4,6 +4,7 @@
   "description": "a nodejs process manager package",
   "main": "index.js",
   "dependencies": {
+    "commander": "^2.9.0",
     "eventemitter2": "^1.0.3"
   },
   "devDependencies": {},
