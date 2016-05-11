@@ -3,7 +3,9 @@
   "version": "0.0.3",
   "description": "a nodejs process manager package",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "eventemitter2": "^1.0.3"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
