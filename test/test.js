@@ -1,13 +1,13 @@
 // 下面是测试
-var Titan = require('../index.js');
+var pmt = require('../index.js');
 
-Titan.start({
+pmt.start({
     'name' : 'myTitan',
     'entrance' : 'index.js',
     'worker_count' : 1,
     'args' : '--harmony'
 },function (){
-    // CLI.test();
+    pmt.disconnect();
 })
 
 // require('./index.js')
