@@ -8,7 +8,6 @@ var pmt = require('../index');
 //basic infomation
 commander
     .version(pkg.version)
-    .description('pmt: progress manager titan');
 
 //options  
 commander
@@ -17,6 +16,7 @@ commander
 //commands
 commander
     .command('start [appName]')
+    .description('start description, 待根据CLI提供的api完善')
     .action(function(appName, options) {
         pmt.start({
             'name': appName || 'myTitan',
@@ -24,14 +24,15 @@ commander
             'worker_count': 1,
             'args': '--harmony'
         }, function() {});
-    });
+    })
 commander
     .command('kill [appName]')
+    .description('默认kill Daemon,输入appName,则kill相应app；待根据CLI提供的api完善')
     .action(function(appName) {
         //kill daemon
         if (typeof appName == 'undefined') {
             pmt.kill();
         }
-    });
+    })
 
 commander.parse(process.argv);
