@@ -1,6 +1,6 @@
 var p = require('path');
 var fs = require('fs');
-// var chalk = require('chalk');
+var chalk = require('chalk');
 
 // 定位 Titan 的运行目录
 var ROOTPATH = '';
@@ -13,16 +13,23 @@ if (process.env.TITAN_ROOT_PATH) {
 }
 
 var Constants = {
-    ROOT_PATH              : ROOTPATH,
+    ROOT_PATH          : ROOTPATH,
+    
+    // process status
+    ONLINE_STATUS      : 'online',
+    OFFLINE_STATUS     : 'offline',
+    STOPPING_STATUS    : 'stopping',
+    LAUNCHING_STATUS   : 'launching',
+    ERRORED_STATUS     : 'errored',
 
-    ONLINE_STATUS          : 'online',
-    OFFLINE_STATUS         : 'offline',
-    STOPPING_STATUS        : 'stopping',
-    LAUNCHING_STATUS       : 'launching',
-    ERRORED_STATUS         : 'errored',
+    // log prefix
+    PREFIX_INFO     : chalk.green('[TITAN]'),
+    PREFIX_ERROR    : chalk.red('[TITAN][ERROR]'),
+    PREFIX_WARN     : chalk.yellow('[TITAN][WARN]'),
 
-    DAEMON_PID_PATH        : p.resolve(ROOTPATH, 'titan.pid'),
-    DAEMON_PRO_PORT        : p.resolve(ROOTPATH, 'protocol.sock')
+    // daemon home path file
+    DAEMON_PID_PATH    : p.resolve(ROOTPATH, 'titan.pid'),
+    DAEMON_PRO_PORT    : p.resolve(ROOTPATH, 'protocol.sock')
 }
 
 // windows 平台 处理

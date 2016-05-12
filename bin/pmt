@@ -9,7 +9,7 @@ var pmt = require('../index');
 commander
     .version(pkg.version)
 
-//options  
+//options
 commander
     .option('-a, --all', 'list all commands')
 
@@ -18,20 +18,34 @@ commander
     .command('start [appName]')
     .description('start description, 待根据CLI提供的api完善')
     .action(function(appName, options) {
-        pmt.start({
-            'name': appName || 'myTitan',
-            'entrance': '../test/index.js',
-            'worker_count': 1,
-            'args': '--harmony'
-        }, function() {});
-    })
+
+        if (typeof appName == 'undefined'){
+            console.log('Please input [appName]/all after stop');
+        } else if (appName == 'all'){
+            pmt.startAppAll(pmt.disconnect);
+        } else {
+            pmt.startAppWithName(appName, pmt.disconnect);
+        }
+    });
 commander
     .command('kill [appName]')
     .description('默认kill Daemon,输入appName,则kill相应app；待根据CLI提供的api完善')
     .action(function(appName) {
         //kill daemon
         if (typeof appName == 'undefined') {
-            pmt.kill();
+            pmt.kill(pmt.disconnect);
+        }
+    });
+commander
+    .command('stop [appName]')
+    .action(function(appName) {
+        //kill daemon
+        if (typeof appName == 'undefined') {
+            console.log('Please input [appName]/all after stop');
+        } else if (appName == 'all'){
+            pmt.stopAppAll(pmt.disconnect);
+        } else {
+            pmt.stopAppWithName(appName, pmt.disconnect);
         }
     })
 
