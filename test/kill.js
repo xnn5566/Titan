@@ -1,3 +1,5 @@
 var pmt = require('../index.js');
 
-pmt.kill();
+pmt.kill(function (){
+    pmt.disconnect();
+});
