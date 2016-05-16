@@ -1,9 +1,9 @@
 var net = require('net');
 var fs = require('fs');
 
-console.log('我是 worker');
 var server = net.createServer(function(connect) { // 'connection' 监听器
     connect.write('hello world');
+    console.log('this is worker');
     connect.end();
 });
 server.listen(8080);
