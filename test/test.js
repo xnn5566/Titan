@@ -2,10 +2,11 @@
 var pmt = require('../index.js');
 
 pmt.start({
-    'name' : 'myTitan',
-    'entrance' : 'index.js',
-    'worker_count' : 1,
-    'args' : '--harmony'
+    'name'         : 'myTitan',
+    'entrance'     : 'index.js',
+    'worker_count' : 2,
+    'args'         : '--harmony',
+    'max_momery'   : '128MB'
 },function (){
     pmt.disconnect();
 })

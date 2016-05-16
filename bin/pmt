@@ -62,4 +62,17 @@ commander
         }
     })
 
+commander
+    .command('logs')
+    .action(function(appName) {
+        //kill daemon
+        pmt.logs();
+    })
+
+commander
+    .command('daemonlogs')
+    .action(function(appName) {
+        //kill daemon
+        pmt.daemonLogs();
+    })
 commander.parse(process.argv);
