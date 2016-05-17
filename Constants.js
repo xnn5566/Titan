@@ -44,8 +44,7 @@ var Constants = {
     DAEMON_EVENT_PORT     : p.resolve(ROOTPATH, 'event.sock'),
 
     // WatchDog config
-    WATCHDOG_INTERVAL     : 3000,
-    WATCHDOG_MAXCOUNT     : 30
+    WATCHDOG_INTERVAL     : 30000
 }
 
 // windows 平台 处理

@@ -83,7 +83,11 @@ commander
     .command('list')
     .action(function() {
         //kill daemon
-        pmt.getWorkers(function (workers){
+        pmt.getWorkers(function (err, workers){
+            if (err) {
+                console.err(err);
+                return;
+            }
             var table = new Table({
                 head  : ['App Name', 'Name', 'Worker Id', 'Status', 'Pid', 'Restarted', 'Uptime'],
                 style : {head : ['gray', 'bold']}
