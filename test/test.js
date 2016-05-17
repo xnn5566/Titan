@@ -6,7 +6,7 @@ pmt.start({
     'entrance'     : 'index.js',
     'worker_count' : 2,
     'args'         : '--harmony',
-    'max_momery'   : '128' // 单位 MB
+    'max_momery'   : '10' // 单位 MB
 },function (){
     pmt.disconnect();
 })
