@@ -31,13 +31,10 @@ commander
         }
     });
 commander
-    .command('kill [appName]')
-    .description('默认kill Daemon,输入appName,则kill相应app；待根据CLI提供的api完善')
-    .action(function(appName) {
-        //kill daemon
-        if (typeof appName == 'undefined') {
-            pmt.kill(pmt.disconnect);
-        }
+    .command('kill')
+    .description('kill Daemon')
+    .action(function() {
+        pmt.kill(pmt.disconnect);
     });
 commander
     .command('stop [appName]')
