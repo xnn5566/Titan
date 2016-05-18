@@ -24,7 +24,7 @@ See test/test.js and test/index.js to use pmt.
 ### test.js
 
 ```js
-var pmt = require('../index.js');
+var pmt = require('pmt');
 
 pmt.start({
     'name'         : 'myTitan',   // your app name
