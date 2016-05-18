@@ -1,6 +1,10 @@
 {
   "name": "pmt",
+<<<<<<< HEAD
   "version": "0.0.11",
+=======
+  "version": "0.0.8",
+>>>>>>> master
   "description": "a nodejs process manager package",
   "main": "index.js",
   "dependencies": {
