@@ -66,6 +66,19 @@ commander
     })
 
 commander
+    .command('grestart [appName]')
+    .action(function(appName) {
+        //kill daemon
+        if (typeof appName == 'undefined') {
+            console.log('Please input [appName]/all after stop');
+        } else if (appName == 'all'){
+            pmt.gracefulRestartAppAll(pmt.disconnect);
+        } else {
+            pmt.gracefulRestartAppWithName(appName, pmt.disconnect);
+        }
+    })
+
+commander
     .command('logs')
     .action(function(appName) {
         //kill daemon
