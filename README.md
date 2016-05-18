@@ -57,7 +57,7 @@ $ node test.js
 ## Command
 
 ```bash
-$ npm install pmt             # for require
+$ npm install pmt --save      # for require
 $ npm install pmt -g          # for easy CLI
 
 $ pmt start [appName]/all     # start [appName]/all when stop
