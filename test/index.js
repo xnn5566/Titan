@@ -7,6 +7,5 @@ var server = net.createServer(function(connect) {
     connect.end();
 });
 server.listen(8080);
-
 // var name = require('./name');
 // console.log(fs.readFileSync('file.js').toString());
